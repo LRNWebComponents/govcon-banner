@@ -2,19 +2,19 @@
 ```
 <custom-element-demo>
   <template>
-    <link rel="import" href="example-element.html">
+    <link rel="import" href="govcon-banner.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
 ```
 -->
 ```html
-<example-element></example-element>
+<govcon-banner></govcon-banner>
 ```
 
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/LRNWebComponents/example-element)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/LRNWebComponents/govcon-banner)
 
-# \<example-element\>
+# \<govcon-banner\>
 
 A LRN element
 
