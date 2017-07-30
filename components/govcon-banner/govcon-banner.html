@@ -1,0 +1,99 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`govcon-banner`
+A sample govcon banner.
+
+@demo demo/index.html
+-->
+
+<dom-module id="govcon-banner">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      *, *:before, *:after {
+      	box-sizing: inherit;
+      }
+      img, legend {
+      	border: 0;
+      }
+      .secondarybanners {
+      	margin: 0 -1em;
+      }
+      @media (min-width: 768px) {
+	      .secondarybanners .secondarybanner {
+	      	width: 50%;
+	    	float: left;
+	      }
+	  }
+      .secondarybanner {
+      	display: block;
+	    position: relative;
+	    margin-bottom: -0.5em;
+      }
+      .secondarybanner:after {
+      	content: "";
+	    display: block;
+	    clear: both;
+      }
+      .secondarybanner img {
+      	width: 100%;
+      }
+      .secondarybanner__text {
+      	position: absolute;
+	    bottom: 0.5em;
+	    padding-bottom: 0.5em;
+      }
+      .secondarybanner h3 {
+      	font-family: Helvetica,sans-serif;
+	    font-size: 2.5em;
+	    letter-spacing: 0.05em;
+	    color: white;
+	    text-shadow: 0 0 0.5em rgba(0,0,0,0.5);
+	    margin: 0 0.5em -0.25em 0.5em;
+	    padding-bottom: 0;
+	    line-height: 145%;
+      }
+      .secondarybanner p {
+      	color: #efac37;
+	    margin: 0 1em;
+	    padding: 0 0 0.5em 0;
+      }
+      .secondarybanner a:link, .secondarybanner a:visited {
+      	color: #efac37;
+    	text-decoration: none;
+    	cursor: inherit;
+      }
+    </style>
+    <div id="block-dgcsecondarybanners" data-block-plugin-id="dgc_secondarybanners" class="secondarybanners">
+	  <div class="secondarybanner">
+	  <img src="files/govcon1.jpg" alt="Sponsor at GovCon 2017">
+	  <div class="secondarybanner__text">
+	    <h3>Connect</h3>
+	    <p><a href="/sponsor">Interested in sponsoring or exhibiting?</a></p>
+	  </div>
+	</div>
+	  <div class="secondarybanner">
+	  <img src="files/govcon2.jpg" alt="Present at GovCon 2017">
+	  <div class="secondarybanner__text">
+	    <h3>Present</h3>
+	    <p><a href="/present">Share your knowledge with the community</a></p>
+	  </div>
+	</div>
+	</div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'govcon-banner',
+
+      properties: {
+
+      },
+
+    });
+  </script>
+</dom-module>
