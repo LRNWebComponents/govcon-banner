@@ -1,0 +1,16 @@
+{
+  "banners": [
+    {
+      "image": "govcon1.jpg",
+      "title": "Connect",
+      "text": "Interested in sponsoring or exhibiting?",
+      "link": "/sponsor"
+    },
+    {
+      "image": "govcon2.jpg",
+      "title": "Present",
+      "text": "Share your knowledge with the community",
+      "link": "/present"
+    }
+  ]
+}
