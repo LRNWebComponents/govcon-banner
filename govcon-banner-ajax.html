@@ -1,0 +1,32 @@
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+<link rel="import" href="govcon-banner.html">
+
+<dom-module id="govcon-banner-ajax">
+  <template>
+    <style>
+       :host {
+        display: block;
+      }
+    </style>
+
+    <iron-ajax auto url="[[dataSource]]" handle-as="json" last-response="{{data}}" debounce-duration="300"></iron-ajax>
+    
+    <template is="dom-repeat" items="{{data.banners}}" as="banner">
+      <govcon-banner title="[[banner.title]]" text="[[banner.text]]" image$="../files/[[banner.image]]" link="[[banner.link]]" alt="[[banner.alt]]" ></govcon-banner>
+    </template>
+
+  </template>
+  <script>
+    Polymer({
+      is: 'govcon-banner-ajax',
+      properties: {
+        data: {
+          type: Object
+        },
+        dataSource: {
+          type: String
+        }
+      }
+    });
+  </script>
+</dom-module>

@@ -10,7 +10,7 @@
 
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../govcon-banner.html">
+    <link rel="import" href="../govcon-banner-ajax.html">
 
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
@@ -18,7 +18,8 @@
   <body>
     <div class="vertical-section-container centered" style="max-width:80%;">
       <h3>Basic govcon-banner demo</h3>
-      <govcon-banner title="Web Components" image="../files/govcon1.jpg" text="Interested in sponsoring or exhibiting?" link="http://google.com"></govcon-banner>
+      <!-- <govcon-banner title="Web Components" image="../files/govcon1.jpg" text="Interested in sponsoring or exhibiting?" link="http://google.com"></govcon-banner> -->
+      <govcon-banner-ajax data-source="/files/data.json"></govcon-banner-ajax>
     </div>
   </body>
 </html>
