@@ -3,7 +3,9 @@
   "description": "A gov con banner.",
   "main": "govcon-banner.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.9.1"
+    "polymer": "Polymer/polymer#^1.9.1",
+    "paper-button": "PolymerElements/paper-button#^2.0.0",
+    "paper-input": "PolymerElements/paper-input#^2.0.1"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

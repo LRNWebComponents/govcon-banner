@@ -1,4 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-input/paper-input.html">
 
 <!--
 `govcon-banner`
@@ -8,92 +10,129 @@ A sample govcon banner.
 -->
 
 <dom-module id="govcon-banner">
-  <template>
-    <style>
-      :host {
-        display: block;
-      }
-      *, *:before, *:after {
-      	box-sizing: inherit;
-      }
-      img, legend {
-      	border: 0;
-      }
-      .secondarybanners {
-      	margin: 0 -1em;
-      }
-      @media (min-width: 768px) {
-	      .secondarybanners .secondarybanner {
-	      	width: 50%;
-	    	float: left;
-	      }
-	  }
-      .secondarybanner {
-      	display: block;
-	    position: relative;
-	    margin-bottom: -0.5em;
-      }
-      .secondarybanner:after {
-      	content: "";
-	    display: block;
-	    clear: both;
-      }
-      .secondarybanner img {
-      	width: 100%;
-      }
-      .secondarybanner__text {
-      	position: absolute;
-	    bottom: 0.5em;
-	    padding-bottom: 0.5em;
-      }
-      .secondarybanner h3 {
-      	font-family: Helvetica,sans-serif;
-	    font-size: 2.5em;
-	    letter-spacing: 0.05em;
-	    color: white;
-	    text-shadow: 0 0 0.5em rgba(0,0,0,0.5);
-	    margin: 0 0.5em -0.25em 0.5em;
-	    padding-bottom: 0;
-	    line-height: 145%;
-      }
-      .secondarybanner p {
-      	color: #efac37;
-	    margin: 0 1em;
-	    padding: 0 0 0.5em 0;
-      }
-      .secondarybanner a:link, .secondarybanner a:visited {
-      	color: #efac37;
-    	text-decoration: none;
-    	cursor: inherit;
-      }
-    </style>
-    <div id="block-dgcsecondarybanners" data-block-plugin-id="dgc_secondarybanners" class="secondarybanners">
-	  <div class="secondarybanner">
-	  <img src="files/govcon1.jpg" alt="Sponsor at GovCon 2017">
-	  <div class="secondarybanner__text">
-	    <h3>Connect</h3>
-	    <p><a href="/sponsor">Interested in sponsoring or exhibiting?</a></p>
-	  </div>
-	</div>
-	  <div class="secondarybanner">
-	  <img src="files/govcon2.jpg" alt="Present at GovCon 2017">
-	  <div class="secondarybanner__text">
-	    <h3>Present</h3>
-	    <p><a href="/present">Share your knowledge with the community</a></p>
-	  </div>
-	</div>
-	</div>
-  </template>
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
 
-  <script>
-    Polymer({
+			*,
+			*:before,
+			*:after {
+				box-sizing: inherit;
+			}
 
-      is: 'govcon-banner',
+			img,
+			legend {
+				border: 0;
+			}
 
-      properties: {
+			.secondarybanners {
+				margin: 0 -1em;
+			}
 
-      },
+			@media (min-width: 768px) {
+				.secondarybanners .secondarybanner {
+					width: 50%;
+					float: left;
+				}
+			}
 
-    });
-  </script>
+			.secondarybanner {
+				display: block;
+				position: relative;
+				margin-bottom: -0.5em;
+			}
+
+			.secondarybanner:after {
+				content: "";
+				display: block;
+				clear: both;
+			}
+
+			.secondarybanner img {
+				width: 100%;
+			}
+
+			.secondarybanner__text {
+				position: absolute;
+				bottom: 0.5em;
+				padding-bottom: 0.5em;
+			}
+
+			.secondarybanner h3 {
+				font-family: Helvetica, sans-serif;
+				font-size: 2.5em;
+				letter-spacing: 0.05em;
+				color: white;
+				text-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+				margin: 0 0.5em -0.25em 0.5em;
+				padding-bottom: 0;
+				line-height: 145%;
+			}
+
+			.secondarybanner p {
+				color: #efac37;
+				margin: 0 1em;
+				padding: 0 0 0.5em 0;
+			}
+
+			.secondarybanner a:link,
+			.secondarybanner a:visited {
+				color: #efac37;
+				text-decoration: none;
+				cursor: inherit;
+			}
+		</style>
+
+			<paper-button on-click="_buttonClicked">
+				<div class="secondarybanner">
+					<img src="[[image]]" alt="[[alt]]">
+					<div class="secondarybanner__text">
+						<template is="dom-if" if="[[_renderTitle()]]">
+							<h3>[[title]]</h3>
+						</template>
+						<p>[[text]]</p>
+					</div>
+				</div>
+			</paper-button>
+
+			<paper-input label="title one-way" value="[[title]]"></paper-input>
+			<paper-input label="title two-way" value="{{title}}"></paper-input>
+
+	</template>
+
+	<script>
+		Polymer({
+
+			is: 'govcon-banner',
+
+			properties: {
+				title: {
+					type: String
+				},
+				text: {
+					type: String
+				},
+				image: {
+					type: String
+				},
+				link: {
+					type: String
+				},
+				alt: {
+					type: String
+				}
+			},
+			_renderTitle: function () {
+				return true;
+			},
+			_buttonClicked: function () {
+				if (this.link) {
+					alert('I\'m going to ' + this.link);
+				}
+			}
+
+		});
+	</script>
 </dom-module>
